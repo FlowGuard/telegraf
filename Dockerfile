@@ -1,6 +1,8 @@
 FROM telegraf:latest
 LABEL maintainer="jaroslav.barton@comsource.cz"
 
+ADD sources.list /etc/apt/
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends snmp-mibs-downloader && \
     rm -rf /var/lib/apt/lists/* && \
