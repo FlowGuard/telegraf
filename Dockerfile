@@ -12,3 +12,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     tar xvf juniper-mibs-17.2R1.13.tgz && \
     cp JuniperMibs/* /usr/share/snmp/mibs/ && \
     rm -rf /tmp/juniper
+
+ADD IF-MIB /var/lib/mibs/ietf/
