@@ -1,4 +1,4 @@
-FROM telegraf:latest
+FROM telegraf:1.7.4
 LABEL maintainer="jaroslav.barton@comsource.cz"
 
 ADD sources.list /etc/apt/
