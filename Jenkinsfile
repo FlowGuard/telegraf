@@ -13,9 +13,10 @@ pipeline {
                     gitVersion = sh(script: 'git describe --tags --always', returnStdout: true).toString().trim()
                     currentBuild.displayName = "#${bn}:${gitVersion}"
 
-                    dockerImage.push(gitVersion)
                     if (env.BRANCH_NAME == "master") {
                         dockerImage.push("latest")
+                    } else {
+                        dockerImage.push(gitVersion)
                     }
                 }
             }
