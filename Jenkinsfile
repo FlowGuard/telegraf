@@ -14,6 +14,9 @@ pipeline {
                     currentBuild.displayName = "#${bn}:${gitVersion}"
 
                     dockerImage.push(gitVersion)
+                    if (env.BRANCH_NAME == "master") {
+                        dockerImage.push("latest")
+                    }
                 }
             }
         }
